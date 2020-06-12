@@ -11,7 +11,7 @@ export default class Helper extends PureComponent {
 
     disabled: PropTypes.bool,
 
-    style: Animated.Text.propTypes.style,
+    // style: Animated.Text.propTypes.style,
 
     baseColor: PropTypes.string,
     errorColor: PropTypes.string,
@@ -28,11 +28,13 @@ export default class Helper extends PureComponent {
       inputRange: [-1, -0.5, 0],
       outputRange: [1, 0, 1],
       extrapolate: 'clamp',
+      useNativeDrive:true
     });
 
     this.state = {
       errored: !!error,
       opacity,
+      useNativeDrive:true
     };
   }
 

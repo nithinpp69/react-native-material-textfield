@@ -43,7 +43,7 @@ export default class Label extends PureComponent {
       y1: PropTypes.number,
     }),
 
-    style: Animated.Text.propTypes.style,
+    // style: Animated.Text.propTypes.style,
     label: PropTypes.string,
   };
 
@@ -76,6 +76,7 @@ export default class Label extends PureComponent {
         focusAnimation.interpolate({
           inputRange: [-1, 0, 1],
           outputRange: [errorColor, baseColor, tintColor],
+          useNativeDrive:true
         });
 
     let textStyle = {
@@ -95,16 +96,19 @@ export default class Label extends PureComponent {
         scale: labelAnimation.interpolate({
           inputRange: [0, 1],
           outputRange: [1, activeFontSize / fontSize],
+          useNativeDrive:true
         }),
       }, {
         translateY: labelAnimation.interpolate({
           inputRange: [0, 1],
           outputRange: [y0, y1],
+          useNativeDrive:true
         }),
       }, {
         translateX: labelAnimation.interpolate({
           inputRange: [0, 1],
           outputRange: [x0, x1],
+          useNativeDrive:true
         }),
       }],
     };
